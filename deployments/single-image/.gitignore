@@ -1,0 +1,6 @@
+# Local environment file — may contain internal registry/image addresses.
+# Copy .env.example to .env and edit locally; never commit the real .env.
+.env
+
+# Local runtime state (Ladybug graph data, compose run directory).
+.run/

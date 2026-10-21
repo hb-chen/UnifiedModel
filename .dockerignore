@@ -1,0 +1,53 @@
+# --- VCS / editor / agent tooling (never needed in a build context) ---
+.git
+.github
+.gitignore
+.codex
+.vscode
+.idea
+
+# --- Local caches, virtualenvs, Python artifacts ---
+.cache
+.run
+.venv
+**/.venv
+**/__pycache__
+*.pyc
+
+# --- Local runtime graph data & sample instances (must not be baked in) ---
+data
+
+# --- Secrets / local env overrides (use --build-arg or runtime env instead) ---
+.env
+**/.env
+
+# --- Node & build artifacts (rebuilt inside the image) ---
+node_modules
+web/node_modules
+web/dist
+web/.vite
+web/test-results
+web/playwright-report
+.pnpm-store
+dist
+coverage
+
+# --- Not needed to build the Go binaries or the Web UI ---
+docs
+images
+examples
+tests
+schemas
+expanded_schemas
+api
+sdk
+generated
+practices
+
+# --- Other deployment variants (this image builds from deployments/single-image/runtime) ---
+deployments/compose
+deployments/docker
+
+# --- Misc ---
+*.log
+.DS_Store

@@ -1,0 +1,13 @@
+services:
+  umodel:
+    image: ${UMODEL_IMAGE:-umodel-ladybug:local}
+    restart: unless-stopped
+    environment:
+      UMODEL_API_ADDR: :8080
+      UMODEL_DATA: /data
+      UMODEL_GRAPHSTORE: local.ladybug
+    ports:
+      - "${UMODEL_WEB_PORT:-5173}:5173"
+      - "${UMODEL_API_PORT:-8080}:8080"
+    volumes:
+      - "${UMODEL_HOST_DATA:-../../.run/umodel-ladybug/data}:/data"
